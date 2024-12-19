@@ -1,0 +1,182 @@
+<!-- DreamWalker Plane Project - Mapa Onírico -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mapa.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/amiraldo_logo_transparent_white.png') }}">
+    <title>DreamWalker - Mapa Onírico</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div>
+        <i class="bi bi-list menu-mobile"></i>       
+    </div>
+    
+    <aside id="menu-responsive">
+        <section class="profile">
+            <div id="bar">                
+                <h1 id="animated-text">DreamWalker Plane</h1> 
+                
+                <div id="navbar" class="nav-menu mt-3">
+                    <a href="{{ url_for('index')}}" type="button" class="btn_options_plane_navbar">Início</a>
+                    <a href="{{ url_for('contos')}}" type="button" class="btn_options_plane_navbar">Contos</a>
+                    <a href="{{ url_for('sonhar')}}" type="button" class="btn_options_plane_navbar">O Sonhar</a>
+                    <a href="{{ url_for('mapa')}}" type="button" class="btn_options_plane_navbar">Mapa Onírico</a>
+                </div>                
+            </div>
+            <div id='cube-container-aside'>
+                <div class="face_ top"></div>
+                <div class="face_ right"></div>
+                <div class="face_ bottom"></div>
+                <div class="face_ left"></div>
+                <div class="face_ back"></div>
+                <div class="face_ front"></div>
+            </div>
+        </section>        
+    </aside>
+
+    <main class="flex-grow-1">
+        <div class="conteiner mt-5">
+            <div class="row">        
+                <div class="col-md-12">
+                    <img id="logo" src="{{ url_for('static', filename='images/amiraldo_logo_transparent_white.png') }}" alt="logo">
+                </div>                   
+            </div>        
+        </div>
+        
+        <section class="mt-5 mb-5">
+            <p id="pira">.:.</p>
+            <h2 class="mt-5">Mapa Onírico</h2>  
+            <p class="mt-4">
+                O Mapa Onírico é a bússola que guia sua jornada até os mistérios do <spam id="nome">DreamWalker.</spam> 
+                Como um antigo mapa de exploradores, ele revela os caminhos que levam aos nossos 
+                canais de comunicação, onde você poderá encontrar quem somos e o que fazemos. 
+                Cada marcador é uma chave, direcionando-o para onde os fios do sonho e da 
+                realidade se encontram. Ao seguir suas trilhas, você descobrirá como nos 
+                contatar, e, quem sabe, entenderá mais sobre nosso domínio. O mapa não 
+                entrega tudo de uma vez, mas convida você a explorar suas profundezas. 
+                Atravessar seus limites é o primeiro passo para desvendar os segredos ocultos.
+            </p>
+                      
+        </section>
+
+        <section id="redes_sociais">
+            <h2>Redes Sociais</h2>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/dreamwalker_plane/?hl=pt"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61570894916265"><i class="bi bi-facebook"></i></a>
+            </div>
+        </section>
+        
+        <section id="quem_somos">
+            <h2>DreamWalker Plane</h2>
+            <p>
+                O <spam id="nome">Dreamwalker Plane</spam> é um projeto experimental que 
+                mergulha nas fronteiras entre os sonhos humanos e 
+                as capacidades da inteligência artificial. Utilizando 
+                IA para gerar e manipular cenários e narrativas, o projeto 
+                explora a fusão de realidades: a fluidez dos sonhos 
+                humanos com a precisão dos algoritmos. 
+                A proposta é usar a IA para processos mais tecnicos, possibilitanto que os
+                fragmentos sejam transformaos em contos. <spam id="nome">Dreamwalker Plane</spam> não é apenas uma 
+                experiência sensorial, mas uma reflexão profunda 
+                sobre como a IA pode entender e influenciar o processo experimental criativo humano.
+            </p>
+        </section>
+
+        <section id="mensagem" class="mt-5">
+            <h2>Mensagens</h2>
+            <p>
+                Enviar uma mensagem ao <spam id="nome">DreamWalker</spam> é lançar suas palavras no desconhecido, 
+                onde críticas, relatos e opiniões ecoam além do real. Cada e-mail atravessa 
+                o véu dos sonhos, carregando sua intenção. O portal está aberto; basta você 
+                se conectar e deixar sua marca.
+            </p>
+            <div class="col-md-7 mt-md-0 form">
+                <div class="card p-5 h-100 shadow border-0" data-anime="right">
+                    <form class="row g-3 custom-form" action="/send" method="POST">
+                        <!-- action /send method POST para enviar os emails-->
+                        <div class="col-md-6">
+                            <label for="name" class="form-label"> Nome:</label>
+                            <input required type="text" class="form-control" id="name" name="name"
+                                placeholder="Seu nome">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label"> Email:</label>
+                            <input required type="email" class="form-control" id="email" name="email"
+                                placeholder="Seu email" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="message" class="form-label"> Mensagens:</label>
+                            <textarea required type="text" class="form-control" id="message" rows="4"
+                                placeholder="Escreva a mensagem" name="message"></textarea>
+                        </div>
+
+
+                        <div class="col-12 d-flex justify-content-center mt-4">
+                            <button id="btn-send" type="submit" class="btn btn-outline-dark custom-btn">Enviar</button>
+
+                            <button id="btn-send-loader" class="btn btn-primary custom-btn" type="button"
+                                disabled>
+                                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                <span role="status">Enviando...</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="participe" class="mt-5">
+            <h2>Participe</h2>
+            <p>
+                Nas sombras do desconhecido, onde os sonhos se entrelaçam com a realidade, 
+                existe um portal que só pode ser mantido por aqueles que compreendem o 
+                valor do inexplicável. Se você sentiu o chamado desse universo cyberunderground 
+                onírico, saiba que sua contribuição, por menor que seja, é o combustível 
+                que mantém essa jornada viva. Cada doação é um eco de apoio, uma faísca que 
+                ilumina os recantos mais sombrios da criação. Se você valoriza o que foi 
+                desvendado até aqui, considere fortalecer esta proposta com o seu gesto. 
+                O destino desse projeto pode estar nas suas mãos.
+            </p>
+            <a id="doe" href="https://paypal.me/rodriguesxes" target="_blank" class="justify-content-center">Participe</a>
+        </section>
+
+        <section id="cube" class="mt-5">
+            <div id='cube-container' class="mb-5 mt-5">
+                <div class="face top"></div>
+                <div class="face right"></div>
+                <div class="face bottom"></div>
+                <div class="face left"></div>
+                <div class="face back"></div>
+                <div class="face front"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-white text-center mt-auto">        
+        <div id="text-footer">
+            <p>&copy;<span id="current-year"></span><a href="" target="_blank"> Amiraldo Rodrigues.</a> Todos os direitos reservados.</p>            
+            <ul class="footer-links">
+                <li><a href="{{ url_for('politica')}}" target="_blank">Política de Privacidade</a></li>
+                <li><a href="{{ url_for('termosuso')}}" target="_blank">Termos de Uso</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <!-- <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/script.js"></script>
+    
+</body>
+</html>

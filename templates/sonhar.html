@@ -1,0 +1,103 @@
+<!-- DreamWalker Plane Project - Contos -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sonhar.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/amiraldo_logo_transparent_white.png') }}">
+    <title>DreamWalker - Contos</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    
+    <div>
+        <i class="bi bi-list menu-mobile"></i>       
+    </div>
+    
+    <aside id="menu-responsive">
+        <section class="profile">
+            <div id="bar">                
+                <h1 id="animated-text">DreamWalker Plane</h1> 
+
+                <div id="navbar" class="nav-menu mt-3">
+                    <a href="{{ url_for('index')}}" type="button" class="btn_options_plane_navbar">Início</a>
+                    <a href="{{ url_for('contos')}}" type="button" class="btn_options_plane_navbar">Contos</a>
+                    <a href="{{ url_for('sonhar')}}" type="button" class="btn_options_plane_navbar">O Sonhar</a>
+                    <a href="{{ url_for('mapa')}}" type="button" class="btn_options_plane_navbar">Mapa Onírico</a>
+                </div>                
+            </div>
+            <div id='cube-container-aside'>
+                <div class="face_ top"></div>
+                <div class="face_ right"></div>
+                <div class="face_ bottom"></div>
+                <div class="face_ left"></div>
+                <div class="face_ back"></div>
+                <div class="face_ front"></div>
+            </div>
+        </section>        
+    </aside>
+
+    <main class="flex-grow-1">
+        <div class="conteiner mt-5">
+            <div class="row">        
+                <div class="col-md-12">
+                    <img id="logo" src="{{ url_for('static', filename='images/amiraldo_logo_transparent_white.png') }}" alt="logo">
+                </div>                   
+            </div>        
+        </div>
+        
+        <section class="mt-5 mb-5" id="fragmentos_section">
+            
+            <p id="pira">.:.</p>
+            <p>
+                A construção deste portal está longe de ser simples. 
+                Algo no ar, invisível aos olhos, desafia nossa jornada. 
+                Linhas de código se entrelaçam, mas o progresso é sutil, 
+                como se algo estivesse constantemente a nos observar. 
+                A página está em manutenção, mas não se engane – não é 
+                apenas um processo técnico. Algo mais profundo e misterioso 
+                está em jogo. Cada ajuste parece atrair uma energia estranha, 
+                como se o site estivesse em transição para algo além. 
+                Agradecemos sua paciência, pois o que está por vir não é 
+                apenas uma atualização, mas algo que transcende o esperado. 
+                O portal logo se abrirá, mas até lá, o mistério permanece. 
+            </p>
+        </section>
+
+        
+        <section id="cube" class="mt-5">
+            <div id='cube-container' class="mb-5 mt-5">
+                <div class="face top"></div>
+                <div class="face right"></div>
+                <div class="face bottom"></div>
+                <div class="face left"></div>
+                <div class="face back"></div>
+                <div class="face front"></div>
+            </div>
+        </section>
+
+    </main>   
+    
+
+    <footer class="text-white text-center py-3 mt-auto">        
+        <div id="text-footer">
+            <p>&copy;<span id="current-year"></span><a href="" target="_blank"> Amiraldo Rodrigues.</a> Todos os direitos reservados.</p>            
+            <ul class="footer-links">
+                <li><a href="{{ url_for('politica')}}" target="_blank">Política de Privacidade</a></li>
+                <li><a href="{{ url_for('termosuso')}}" target="_blank">Termos de Uso</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+    
+</body>
+</html>
