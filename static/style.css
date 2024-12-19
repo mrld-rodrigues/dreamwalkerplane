@@ -119,7 +119,7 @@ i.menu-mobile{
     left: -399px;
     bottom: 0; 
     overflow-y: hidden;
-    width: 346px;
+    width: 399px;
     transition: all ease-in-out 0.5s;
     padding: 0 15px;
     z-index: 9997;
@@ -134,7 +134,7 @@ i.menu-mobile{
     font-weight: 400;
     font-size: 1.4rem;
     color: #ffffff;
-    margin-left: 30px;
+    margin-left: -30px;
     margin-top: 80px;
     margin-bottom: 30px;
     
@@ -167,7 +167,7 @@ i.menu-mobile{
     box-sizing: border-box;
     transform-style: preserve-3d;
     position: absolute;
-    margin-left: 50%;
+    margin-left: 25%;
     margin-top: 100px;
     width: 50px;  /* Ajustado para 50px */
     height: 50px; /* Ajustado para 50px */
