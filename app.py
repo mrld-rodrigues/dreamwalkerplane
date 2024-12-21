@@ -27,7 +27,7 @@ inicializar_contador()
 
 @app.route('/')
 def index():
-    request.headers.get('X-Forwarded-For', request.remote_addr)  # Obtém o IP "REAL" do visitante
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)  # Obtém o IP "REAL" do visitante
     # Atualiza o contador de visitantes
     atualizar_contadores(visitas=1, ip=ip)
     return render_template('index.html')

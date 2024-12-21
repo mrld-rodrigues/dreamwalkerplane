@@ -21,11 +21,23 @@ def inicializar_contador():
 
 
 def obter_contadores():
+    if not os.path.exists(contador_file):
+        inicializar_contador()
+
     with open(contador_file, 'r') as f:
         conteudo = f.read()
 
     # Carrega os dados do arquivo, que está em formato YAML
     data = yaml.safe_load(conteudo)
+
+
+    # Garante que 'data' não seja None
+    if data is None:
+        data = {
+            'visitantes': 0,
+            'downloads': 0,
+            'visitas': []
+        }
 
     # Retorna o número de visitantes, downloads e a lista de visitas
     return data.get('visitantes', 0), data.get('downloads', 0), data.get('visitas', [])

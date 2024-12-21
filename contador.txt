@@ -1,0 +1,9 @@
+downloads: 0
+visitantes: 3
+visitas:
+- data: '2024-12-21 19:03:37'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-21 19:03:45'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-21 19:04:21'
+  local: Desconhecido, Desconhecido, Desconhecido
