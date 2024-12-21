@@ -79,6 +79,16 @@ body {
 }
 
 
+/*alerta */
+
+.alerta{
+  z-index: 1050;
+  top: 33px;
+  left: 6%;  
+  width: 266px; 
+}
+
+
 /* 
   Icode para abrir o menu lateral
 */
@@ -234,7 +244,7 @@ i.menu-mobile{
 }
   
 
-.conteiner {
+.container {
     display: flex;               
     justify-content: center;      
     align-items: flex-start; 
@@ -246,6 +256,7 @@ i.menu-mobile{
     width: 200px;
     box-shadow: 0 0 40px rgb(6, 3, 180);
     border-radius: 50%;
+    
 }
 
 p{
