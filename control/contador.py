@@ -48,7 +48,7 @@ def atualizar_contadores(visitas=0, downloads=0, ip=None):
 
     # Adiciona a nova visita à lista de visitas
     visitas_lista.append({
-        'data': agora,
+        'data': agora, 
         'local': local
     })
 
@@ -62,11 +62,23 @@ def atualizar_contadores(visitas=0, downloads=0, ip=None):
         yaml.dump(data, f, default_flow_style=False)  # Usa o formato YAML
 
 
+# Função para obter a localização do IP
 def obter_localizacao(ip):
     try:
+        # Faz a requisição para obter os dados de geolocalização
         response = requests.get(f'https://ipinfo.io/{ip}/json')
         dados = response.json()
-        print(dados)
-        return dados.get('country', 'Desconhecido')  # Retorna o país
+        
+        # Obtém cidade, região e país, se disponíveis
+        cidade = dados.get('city', 'Desconhecido')
+        regiao = dados.get('region', 'Desconhecido')
+        pais = dados.get('country', 'Desconhecido')
+        
+        # Retorna a string com a localização completa
+        return f'{cidade}, {regiao}, {pais}'
     except Exception as e:
+        # Caso a requisição falhe, retorna "Desconhecido"
         return 'Desconhecido'
+    
+# Testando com um IP público específico
+print(obter_localizacao('8.8.8.8'))  # Exemplo de IP público do Google
