@@ -34,27 +34,19 @@ def index():
 
 
 @app.route('/contos')
-def contos():
-    ip = request.remote_addr  # Obtém o IP do visitante
-    # Atualiza o contador de visitantes
-    atualizar_contadores(visitas=1, ip=ip)
+def contos():    
     return render_template('contos.html')
 
 
 @app.route('/sonhar')
-def sonhar():
-    ip = request.remote_addr  # Obtém o IP do visitante
-    # Atualiza o contador de visitantes
-    atualizar_contadores(visitas=1, ip=ip)
+def sonhar():    
     return render_template('sonhar.html')
 
 
 @app.route('/mapa')
-def mapa():
-    ip = request.remote_addr  # Obtém o IP do visitante
-    # Atualiza o contador de visitantes
-    atualizar_contadores(visitas=1, ip=ip)
+def mapa():    
     hcaptcha_site_key = app.config['HCAPTCHA_SITE_KEY']
+    print(hcaptcha_site_key)
     return render_template('mapa.html', hcaptcha_site_key=hcaptcha_site_key)
 
 
@@ -77,33 +69,7 @@ def send():
         email = request.form.get('email', '') # mesmo que seja uma string vazia
         mensagem = request.form.get('message', '')
 
-        
-        # Verifica a resposta do hCaptcha
-        captcha_response = request.form.get('h-captcha-response')  # Note que o campo do hCaptcha tem um nome diferente
-
-        # Se o hCaptcha não for preenchido, renderiza com um alerta
-        if not captcha_response:
-            flash('Por favor, complete o captcha!', 'danger')  # Flash de erro
-            # Renderiza novamente a página do formulário com os valores preenchidos
-            return render_template('mapa.html', hcaptcha_site_key=app.config['HCAPTCHA_SITE_KEY'], nome=nome, email=email, mensagem=mensagem)
-
-        # Verifica a resposta do hCaptcha com a API do hCaptcha
-        payload = {
-            'secret': app.config['HCAPTCHA_SECRET_KEY'],  # Usa a chave secreta do hCaptcha
-            'response': captcha_response
-        }
-
-        
-
-        # Envia a requisição para verificar o hCaptcha
-        response = requests.post('https://hcaptcha.com/siteverify', data=payload)
-        result = response.json()
-
-        # Se o hCaptcha não for validado, mostra erro
-        if not result.get('success'):
-            flash('Falha na verificação do captcha. Tente novamente.', 'danger')
-            # Renderiza novamente a página do formulário com os valores preenchidos
-            return render_template('mapa.html', hcaptcha_site_key=app.config['HCAPTCHA_SITE_KEY'], nome=nome, email=email, mensagem=mensagem)
+               
 
         # Se o hCaptcha for validado, continua o processamento do formulário
         nome = request.form['name']
