@@ -7,6 +7,9 @@ from control.email_function import send_email, Contato
 import os
 from dotenv import load_dotenv
 from control.contador import inicializar_contador, obter_contadores, atualizar_contadores
+from markupsafe import Markup
+
+
 
 
 # inicia o dotenv
