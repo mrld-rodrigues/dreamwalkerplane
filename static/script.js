@@ -55,3 +55,13 @@ form.addEventListener("submit", (event) => {
 
 
 
+function onloadTurnstileCallback() {
+    turnstile.render('#my-turnstile', {
+        sitekey: '<hcaptcha_site_key>',
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+}
+
+

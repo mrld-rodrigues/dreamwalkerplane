@@ -1,5 +1,5 @@
 downloads: 0
-visitantes: 17
+visitantes: 38
 visitas:
 - data: '2024-12-21 19:03:37'
   local: Desconhecido, Desconhecido, Desconhecido
@@ -34,4 +34,46 @@ visitas:
 - data: '2024-12-22 18:23:59'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2024-12-22 18:24:34'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 19:22:52'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 19:48:51'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 19:52:13'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 19:53:03'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 19:53:59'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:02:01'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:18:47'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:19:58'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:21:10'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:27:26'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:28:15'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:31:38'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 20:40:29'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:15:49'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:32:22'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:35:50'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:40:21'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:49:08'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:50:33'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:53:50'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2024-12-22 21:56:40'
   local: Desconhecido, Desconhecido, Desconhecido
