@@ -47,4 +47,4 @@ Estamos sempre abertos a feedbacks e novas ideias!
 
 ---
 
-### Última atualização: [21/12/2024]
+### Última atualização: [23/01/2025]

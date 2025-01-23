@@ -1,5 +1,5 @@
 downloads: 1
-visitantes: 73
+visitantes: 75
 visitas:
 - data: '2024-12-21 19:03:37'
   local: Desconhecido, Desconhecido, Desconhecido
@@ -148,4 +148,8 @@ visitas:
 - data: '2025-01-23 11:34:51'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2025-01-23 11:40:26'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 12:31:35'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 12:32:01'
   local: Desconhecido, Desconhecido, Desconhecido
