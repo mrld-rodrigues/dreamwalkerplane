@@ -1,5 +1,5 @@
 downloads: 1
-visitantes: 47
+visitantes: 73
 visitas:
 - data: '2024-12-21 19:03:37'
   local: Desconhecido, Desconhecido, Desconhecido
@@ -96,4 +96,56 @@ visitas:
 - data: '2024-12-26 16:27:13'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2024-12-26 16:27:36'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 10:58:38'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 10:58:39'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 10:59:08'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 10:59:20'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:15:19'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:21:43'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:22:15'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:22:17'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:22:47'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:22:57'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:22:58'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:24:28'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:24:45'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:24:52'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:25:06'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:25:12'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:25:32'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:26:21'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:27:32'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:29:27'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:29:41'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:30:06'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:31:05'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:34:43'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:34:51'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-01-23 11:40:26'
   local: Desconhecido, Desconhecido, Desconhecido

@@ -19,13 +19,6 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 
 
-# Configura as chaves do ReCaptcha no app.config
-app.config['RECAPTCHA_SITE_KEY'] = os.getenv('RECAPTCHA_SITE_KEY')
-app.config['RECAPTCHA_SECRET_KEY'] = os.getenv('RECAPTCHA_SECRET_KEY')
-
-
-
-
 
 # Inicializa o contador ao iniciar o app
 inicializar_contador()
@@ -51,9 +44,6 @@ def sonhar():
 
 @app.route('/mapa')
 def mapa():    
-    # recaptcha_site_key = app.config['RECAPTCHA_SITE_KEY'] 
-    # recaptcha_secret_key = app.config['RECAPTCHA_SECRET_KEY'] 
-    # return render_template('mapa.html', recaptcha_site_key=recaptcha_site_key)
     return render_template('mapa.html')
 
 @app.route('/termosuso')
