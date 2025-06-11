@@ -57,27 +57,43 @@ def politica():
 
 
 @app.route('/send', methods=['POST'])
-def send():    
-    if request.method == 'POST':      
-        
-        nome = request.form.get('name', '')   # Garantimos que sempre terá um valor, 
-        email = request.form.get('email', '') # mesmo que seja uma string vazia
+def send():
+    if request.method == 'POST':
+        # 1. Pega os dados do formulário
+        nome = request.form.get('name', '')
+        email = request.form.get('email', '')
         mensagem = request.form.get('message', '')
 
-                 
-        nome = request.form['name']
-        email = request.form['email']
-        mensagem = request.form['message']
-        contato = Contato(nome, email, mensagem)
+        # 2. Pega o token do reCAPTCHA
+        recaptcha_response = request.form.get('g-recaptcha-response')
+        secret_key = os.getenv('RECAPTCHA_SECRET_KEY')  # coloque sua chave no .env!
 
+        # 3. Verifica com o Google se o token é válido
+        verify_url = 'https://www.google.com/recaptcha/api/siteverify'
+        payload = {
+            'secret': secret_key,
+            'response': recaptcha_response
+        }
+
+        r = requests.post(verify_url, data=payload)
+        result = r.json()
+
+        # 4. Verifica resposta
+        if not result.get('success'):
+            flash('Verificação reCAPTCHA falhou. Tente novamente.', 'danger')
+            return redirect(url_for('index'))
+
+        # 5. Se passou, envia o e-mail
+        contato = Contato(nome, email, mensagem)
         try:
-            send_email(contato)  # Envia o e-mail com os dados do contato
-            flash('Mensagem enviada! Obrigado!', 'success')  # Flash de sucesso
+            send_email(contato)
+            flash('Mensagem enviada! Obrigado!', 'success')
         except Exception as e:
-            flash(f'Erro de envio: {str(e)}', 'danger') 
-            return redirect(url_for('mapa')) # Flash de erro em caso de falha no envio    
+            flash(f'Erro de envio: {str(e)}', 'danger')
+            return redirect(url_for('mapa'))
 
     return redirect(url_for('index'))
+
      
 
     
