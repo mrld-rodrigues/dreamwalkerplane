@@ -4,8 +4,9 @@ from flask import Flask, flash, render_template, redirect, request, send_from_di
 import requests
 import os
 from dotenv import load_dotenv
-from control.contador import inicializar_contador, obter_contadores, atualizar_contadores
+from control.contador import inicializar_contador, obter_contadores, atualizar_contadores, iniciar_pingador
 from control.email_function import Contato, send_email
+
 
 
 
@@ -13,6 +14,10 @@ from control.email_function import Contato, send_email
 
 # inicia o dotenv
 load_dotenv()
+
+
+# Inicia o pingador em background
+iniciar_pingador()
 
 
 app = Flask(__name__)

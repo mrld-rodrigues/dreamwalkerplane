@@ -1,9 +1,15 @@
 downloads: 0
-visitantes: 3
+visitantes: 6
 visitas:
 - data: '2025-06-11 21:35:34'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2025-06-11 21:45:31'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2025-06-11 21:55:34'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-06-11 23:27:43'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-06-11 23:38:10'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-06-11 23:41:43'
   local: Desconhecido, Desconhecido, Desconhecido

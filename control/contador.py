@@ -1,5 +1,8 @@
 # control/contador.py
 
+
+import threading
+import time
 import os
 import requests
 import yaml
@@ -94,3 +97,22 @@ def obter_localizacao(ip):
     
 # Testando com um IP público específico
 print(obter_localizacao('8.8.8.8'))  # Exemplo de IP público do Google
+
+
+
+# ========== CONFIG DO AUTO-PING ==========
+URL = "http://127.0.0.1:5000"  # Substitua pela URL real do seu site
+INTERVALO_MINUTOS = 14
+
+def auto_ping():
+    while True:
+        try:
+            r = requests.get(URL)
+            print(f"[{time.ctime()}] Ping enviado! Status: {r.status_code}")
+        except Exception as e:
+            print(f"[{time.ctime()}] Erro ao pingar: {e}")
+        time.sleep(INTERVALO_MINUTOS * 60)
+
+def iniciar_pingador():
+    thread = threading.Thread(target=auto_ping, daemon=True)
+    thread.start()
