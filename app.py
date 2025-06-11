@@ -81,7 +81,7 @@ def send():
         # 4. Verifica resposta
         if not result.get('success'):
             flash('Verificação reCAPTCHA falhou. Tente novamente.', 'danger')
-            return redirect(url_for('index'))
+            return redirect(url_for('mapa'))
 
         # 5. Se passou, envia o e-mail
         contato = Contato(nome, email, mensagem)
@@ -89,6 +89,7 @@ def send():
             send_email(contato)
             flash('Mensagem enviada! Obrigado!', 'success')
         except Exception as e:
+            print(f"Erro ao enviar e-mail: {str(e)}")   
             flash(f'Erro de envio: {str(e)}', 'danger')
             return redirect(url_for('mapa'))
 
