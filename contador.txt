@@ -1,5 +1,5 @@
 downloads: 0
-visitantes: 6
+visitantes: 19
 visitas:
 - data: '2025-06-11 21:35:34'
   local: Desconhecido, Desconhecido, Desconhecido
@@ -12,4 +12,30 @@ visitas:
 - data: '2025-06-11 23:38:10'
   local: Desconhecido, Desconhecido, Desconhecido
 - data: '2025-06-11 23:41:43'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:48:14'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:48:17'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:48:29'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:49:14'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:49:25'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:50:41'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:50:58'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:52:41'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:52:57'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 12:54:32'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 13:02:14'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 13:06:08'
+  local: Desconhecido, Desconhecido, Desconhecido
+- data: '2025-07-17 13:06:17'
   local: Desconhecido, Desconhecido, Desconhecido

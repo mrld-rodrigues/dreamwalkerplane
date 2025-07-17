@@ -49,7 +49,7 @@ def sonhar():
 
 @app.route('/mapa')
 def mapa():    
-    return render_template('mapa.html')
+    return render_template('mapa.html', recaptcha_site_key=os.getenv('RECAPTCHA_SITE_KEY'))
 
 @app.route('/termosuso')
 def termosuso():
@@ -71,21 +71,49 @@ def send():
 
         # 2. Pega o token do reCAPTCHA
         recaptcha_response = request.form.get('g-recaptcha-response')
-        secret_key = os.getenv('RECAPTCHA_SECRET_KEY')  # coloque sua chave no .env!
+        secret_key = os.getenv('RECAPTCHA_SECRET_KEY')
+
+        # Verifica se o token reCAPTCHA foi enviado
+        if not recaptcha_response:
+            flash('Por favor, complete a verificação reCAPTCHA.', 'danger')
+            return redirect(url_for('mapa'))
+
+        # Verifica se a chave secreta está configurada
+        if not secret_key:
+            flash('Erro de configuração do servidor. Tente novamente mais tarde.', 'danger')
+            return redirect(url_for('mapa'))
 
         # 3. Verifica com o Google se o token é válido
         verify_url = 'https://www.google.com/recaptcha/api/siteverify'
         payload = {
             'secret': secret_key,
-            'response': recaptcha_response
+            'response': recaptcha_response,
+            'remoteip': request.remote_addr
         }
 
-        r = requests.post(verify_url, data=payload)
-        result = r.json()
+        try:
+            r = requests.post(verify_url, data=payload, timeout=10)
+            result = r.json()
+        except requests.exceptions.RequestException as e:
+            print(f"Erro ao conectar com reCAPTCHA: {str(e)}")
+            flash('Erro de conexão com o serviço de verificação. Tente novamente.', 'danger')
+            return redirect(url_for('mapa'))
 
         # 4. Verifica resposta
         if not result.get('success'):
-            flash('Verificação reCAPTCHA falhou. Tente novamente.', 'danger')
+            error_codes = result.get('error-codes', [])
+            print(f"reCAPTCHA falhou com códigos de erro: {error_codes}")
+            
+            # Mensagens específicas para cada tipo de erro
+            if 'invalid-input-secret' in error_codes:
+                flash('Erro de configuração do reCAPTCHA. Contate o administrador.', 'danger')
+            elif 'invalid-input-response' in error_codes:
+                flash('Token reCAPTCHA inválido. Tente novamente.', 'danger')
+            elif 'timeout-or-duplicate' in error_codes:
+                flash('reCAPTCHA expirado. Recarregue a página e tente novamente.', 'danger')
+            else:
+                flash('Verificação reCAPTCHA falhou. Tente novamente.', 'danger')
+            
             return redirect(url_for('mapa'))
 
         # 5. Se passou, envia o e-mail
@@ -121,5 +149,6 @@ def status():
     return render_template('status.html', visitantes=visitantes, downloads=downloads, visitas=visitas)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+    # Em produção, use: app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=False)
+    app.run(debug=True)
 
