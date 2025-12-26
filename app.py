@@ -21,7 +21,12 @@ iniciar_pingador()
 
 
 app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY')
+secret_key = os.getenv('SECRET_KEY')
+if not secret_key:
+    print("[WARN] `SECRET_KEY` não definida. Usando fallback para desenvolvimento. Defina `SECRET_KEY` nas Config Vars do Render.")
+    app.secret_key = 'dev-secret-change-me'
+else:
+    app.secret_key = secret_key
 
 
 
